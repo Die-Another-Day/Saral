@@ -1,0 +1,5 @@
+# Saral log.rules: one rule per line. Severity is required and
+# must be low, medium, high, or critical. 'at least' is optional
+# (default 1) and gates alerts, not line filtering.
+rule "ssh brute force" pattern : "Failed password" severity : high at least : 5
+rule "disk full" pattern : "disk full" severity : medium

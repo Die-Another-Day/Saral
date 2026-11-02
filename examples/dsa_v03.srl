@@ -1,0 +1,46 @@
+# Saral v0.3: heap, linked list, trie, graph extras, arithmetic, else, while.
+took data
+
+heap is new data "heap"
+push data "low" to heap priority : 3
+push data "urgent" to heap priority : 1
+push data "normal" to heap priority : 2
+first is pop data heap
+show first
+
+list is new data "linked"
+append data "a" to list
+append data "b" to list
+append data "c" to list
+remove data "b" from list
+show list
+
+trie is new data "trie"
+insert data trie value : "cat"
+insert data trie value : "car"
+insert data trie value : "dog"
+words is prefix data trie "ca"
+show words
+
+graph is new data "graph"
+link data graph from "a" to "b"
+link data graph from "a" to "c"
+link data graph from "b" to "d"
+link data graph from "c" to "d"
+walked is walk data graph from "a"
+show walked
+cyclic is cycle data graph
+show cyclic
+order is topological data graph
+show order
+
+x is 2 + 3 * 4
+show x
+if x > 10
+    show "big"
+else
+    show "small"
+n is 3
+while n > 0
+    show n
+    n is n - 1

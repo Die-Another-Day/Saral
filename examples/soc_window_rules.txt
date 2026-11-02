@@ -1,0 +1,5 @@
+# Saral log.rules v0.3: time-window + regex rules.
+# A burst of 5 failures inside 60 seconds fires; 5 failures spread
+# over minutes do not. The second rule uses a regex pattern.
+rule "ssh burst" pattern : "Failed password" severity : high at least : 5 within : 60
+rule "bad user" pattern : "Failed.*user root" severity : medium match : regex

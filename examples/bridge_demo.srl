@@ -1,0 +1,8 @@
+# Saral bridge demo: a library written in Node.js, called from Saral.
+# The bridge library lives in libs/greet_bridge/ (lib.json + greet.js).
+took greet_bridge
+
+hello is greet greet_bridge "Saral"
+show hello
+loud is shout greet_bridge "saral"
+show loud

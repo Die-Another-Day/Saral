@@ -1,0 +1,14 @@
+# Saral hello: files, system, and a report, in plain words.
+took file
+took system
+took report
+
+message is "Hello, Saral"
+show message
+write file "hello.txt" text : message
+back is read file "hello.txt"
+show back
+info system -> machine
+show machine
+save back to "hello.json" format : json
+show "done"

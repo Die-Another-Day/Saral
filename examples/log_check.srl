@@ -1,0 +1,14 @@
+# Saral log check: write a sample log, then count and find real lines in it.
+took logs
+took file
+
+write file "sample.log" text : "INFO start\nERROR disk full\nINFO ok\nERROR timeout\n"
+text is read file "sample.log"
+found is find "ERROR" in text
+show found
+errors is count logs "sample.log" pattern : "ERROR"
+show errors
+if errors is 0
+    show "no errors"
+else
+    show "errors found"

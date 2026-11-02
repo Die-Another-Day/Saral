@@ -1,0 +1,12 @@
+# Saral v0.3: time-window rules, regex rules, and a timeline.
+# Run from the saral-lang folder (like soc_rules.srl):
+#   ./saral examples/soc_window.srl
+# The burst (5 failures in 40 seconds) fires the windowed rule;
+# the spaced-out failures do not, even though there are 5 of them.
+took log.rules
+took data
+
+alerts is apply log.rules "examples/soc_window_rules.txt" to "examples/soc_window.log"
+show alerts
+timeline is timeline log.rules "examples/soc_window.log" using rules "examples/soc_window_rules.txt"
+show timeline

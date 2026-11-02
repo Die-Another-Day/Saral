@@ -1,0 +1,20 @@
+# Saral v0.2 SOC demo: log.rules alerts, filtering, IPs, and an
+# attack-chain graph. Run from the saral-lang folder:
+#   ./saral examples/soc_rules.srl
+took log.rules
+took data
+
+alerts is apply log.rules "examples/soc_rules.txt" to "examples/soc_auth.log"
+show alerts
+grouped is group data alerts by : "severity"
+show grouped
+matched is filter log.rules "examples/soc_auth.log" using rules "examples/soc_rules.txt"
+show matched
+ips is extract log.rules "examples/soc_auth.log"
+show ips
+topips is top log.rules "examples/soc_auth.log" count : 2
+show topips
+chain is graph log.rules "examples/soc_auth.log"
+show chain
+route is path data chain from "10.0.0.5" to "10.0.0.3"
+show route

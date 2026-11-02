@@ -1,0 +1,50 @@
+# Saral v0.2 DSA demo: containers and algorithms, in Saral words.
+# Run from the saral-lang folder: ./saral examples/dsa_demo.srl
+took data
+
+stack is new data "stack"
+push data "a" to stack
+push data "b" to stack
+top is pop data stack
+show top
+show stack
+
+queue is new data "queue"
+enqueue data "first" to queue
+enqueue data "second" to queue
+show queue
+done is dequeue data queue
+show done
+
+myset is new data "set"
+add data "a" to myset
+add data "a" to myset
+show myset
+
+mymap is new data "map"
+put data mymap key : "web" value : 80
+show mymap
+port is get data mymap key : "web"
+show port
+
+tree is new data "tree"
+insert data tree value : 5
+insert data tree value : 3
+insert data tree value : 7
+sorted is walk data tree
+show sorted
+
+graph is new data "graph"
+link data graph from "a" to "b" weight : 10
+link data graph from "a" to "c" weight : 1
+link data graph from "c" to "b" weight : 1
+route is path data graph from "a" to "b"
+show route
+best is shortest data graph from "a" to "b"
+show best
+
+parts is split data "d,b,a,c" separator : ","
+ordered is sort data parts using : merge
+show ordered
+idx is search data ordered value : "c" using : binary
+show idx

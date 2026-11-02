@@ -1,0 +1,9 @@
+# Saral local scan: localhost only. Public IPs are refused by the net library.
+took net
+took report
+
+hosts is scan net "127.0.0.1" ports : "22,80,8000,8080"
+show hosts
+open is filter hosts where open is true
+show open
+save hosts to "scan.json" format : json
