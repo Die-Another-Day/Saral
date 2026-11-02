@@ -9,13 +9,9 @@
 #     ./install.sh --local /path/to/saral-release
 #     ./install.sh --local .            # from inside the Saral repo folder
 #
-#   GITHUB mode (NOT LIVE YET — do not expect it to work today):
+#   GITHUB mode (LIVE):
 #     curl -fsSL https://raw.githubusercontent.com/Die-Another-Day/Saral/main/install.sh | sh -s -- --github
 #     This mode downloads from https://raw.githubusercontent.com/Die-Another-Day/Saral/main/
-#     That repository has NOT been created/pushed yet (as of v0.3.0
-#     preparation). Until it is pushed, GITHUB mode will fail with a
-#     404, and that failure means "repo not published yet" — it does
-#     not mean Saral is broken. LOCAL mode is the working mode today.
 #
 # DESTINATIONS:
 #   Default (no sudo required):  PREFIX=$HOME/.local
@@ -52,9 +48,7 @@ usage() {
     echo "  $0 --github [--prefix <dir>]"
     echo "  $0 --github --system"
     echo ""
-    echo "NOTE: --github is NOT LIVE YET. The Die-Another-Day/Saral repo"
-    echo "has not been pushed yet, so --github will fail with a 404 until"
-    echo "it is. Use --local to install today."
+    echo "NOTE: --github downloads from https://github.com/Die-Another-Day/Saral"
     exit "${1:-0}"
 }
 
@@ -105,7 +99,7 @@ if [ "$MODE" = "local" ]; then
     SRC_ABS=$(cd "$SRC" && pwd)
 elif [ "$MODE" = "github" ]; then
     echo "GITHUB mode: downloading Saral v0.3.0 from raw.githubusercontent.com ..."
-    echo "If this fails with 404, the Saral repo has not been published yet (expected before push)."
+    echo "If this fails with 404, check the repo URL and your network."
     BASE_URL="https://raw.githubusercontent.com/Die-Another-Day/Saral/main"
     TMP_DIR=$(mktemp -d)
     SRC_ABS="$TMP_DIR"
